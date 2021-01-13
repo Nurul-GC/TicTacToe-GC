@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/source.java.iml" filepath="$PROJECT_DIR$/.idea/source.java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tictactoe_gc/tictactoe_gc.iml" filepath="$PROJECT_DIR$/tictactoe_gc/tictactoe_gc.iml" />
-    </modules>
-  </component>
-</project>
