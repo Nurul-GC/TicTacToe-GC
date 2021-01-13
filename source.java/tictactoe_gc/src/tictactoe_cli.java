@@ -16,7 +16,5 @@ public class tictactoe_cli {
         int rodada = 0;
         char espacos = ' ';
         List quadro = new ArrayList();
-        quadro.addAll(Collections.singleton("         "));
-
     }
 }
