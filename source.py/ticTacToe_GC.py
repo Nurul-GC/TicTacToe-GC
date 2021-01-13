@@ -1,16 +1,4 @@
 ﻿#! python
-"""
-  ******************************************************************************
-   (c) 2019-2020 Nurul GC                                                      *
-                                                                               *
-   Jovem Programador Python                                                    *
-   Estudante de Engenharia de Telecomunicaçoes                                 *
-   Tecnologia de Informação e de Medicina.                                     *
-                                                                               *
-   Foco Fé Força                                                               *
-   Allah no Comando.                                                           *
-  ******************************************************************************
-"""
 
 # ******************************************************************************
 #  Direitos Autorais (c) 2019-2020 Nurul GC                                    *
@@ -64,13 +52,13 @@ def dois_jogadores():
                     if vitoria():
                         print(f'\nFim do Jogo..\nVitória para Jogador [{peca}];')
                         mostrarQuadro(quadro)
-                        break
+                        exit()
                     peca = 'O'
                 elif peca == 'O':
                     if vitoria():
                         print(f'\nFim do Jogo..\nVitória para Jogador [{peca}];')
                         mostrarQuadro(quadro)
-                        break
+                        exit()
                     peca = 'X'
                 else:
                     peca = ' '
@@ -86,7 +74,7 @@ def dois_jogadores():
         if ' ' not in quadro[:]:
             print(f'\nFim do Jogo..\nEmpate;')
             mostrarQuadro(quadro)
-            break
+            exit()
 
 
 def jogada_pc(p):
@@ -140,11 +128,15 @@ def um_jogador():
 if __name__ == '__main__':
     print('\n***TicTacToe-GC***')
     while True:
-        jogo = input('\nSelecione o nível: (1)Jogador ou (2)Jogadores\n> ')
-        if jogo == '1':
-            um_jogador()
-        elif jogo == '2':
-            dois_jogadores()
-        else:
-            print('\nDigite 1 ou 2..')
-            pass
+        try:
+            jogo = input('\nSelecione o nível: (1)Jogador ou (2)Jogadores\n> ')
+            if jogo == '1':
+                um_jogador()
+            elif jogo == '2':
+                dois_jogadores()
+            else:
+                print('\nDigite 1 ou 2..')
+                pass
+        except KeyboardInterrupt:
+            print("Terminando Jogo..")
+            exit()
