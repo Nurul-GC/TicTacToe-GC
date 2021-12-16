@@ -15,6 +15,10 @@ public class tictactoe_cli {
         char peca = 'X';
         int rodada = 0;
         char espacos = ' ';
-        List quadro = new ArrayList();
+        String[] quadro = {
+                String.valueOf(' '), String.valueOf(' '), String.valueOf(' '),
+                String.valueOf(' '), String.valueOf(' '), String.valueOf(' '),
+                String.valueOf(' '), String.valueOf(' '), String.valueOf(' ')
+        };
     }
 }
