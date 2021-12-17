@@ -1,5 +1,4 @@
 from random import randint
-from sys import exit
 
 
 def vitoria(quadro):
@@ -41,3 +40,7 @@ def jogada_hm(peca, quadro):
 
 def jogador_indv(peca, quadro):
     jogada = int(input(f'\nSelecione aonde irá Jogar [{peca}]:\n[0-8]> '))
+    if quadro[jogada] == ' ':
+        quadro[jogada] = peca
+    else:
+        print('Selecione outra posição de jogo;')
