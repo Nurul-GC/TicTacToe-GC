@@ -16,10 +16,10 @@ def mostrar_quadro(qd):
 def dois_jogadores(quadro, peca, rodada):
     while True:
         try:
-            print(f'\nNivel: 2-Jogadores\nRodada: {rodada}')
-            mostrar_quadro(quadro)
-
             if ' ' in quadro[:]:
+                print(f'\nNivel: 2-Jogadores\nRodada: {rodada}')
+                mostrar_quadro(quadro)
+
                 if peca == 'X':
                     jogador_indv(peca, quadro)
                     peca = 'O'
@@ -51,10 +51,10 @@ def dois_jogadores(quadro, peca, rodada):
 def um_jogador(rodada, peca, quadro):
     while True:
         try:
-            print(f'\nNível: 1-Jogador\nRodada: {rodada}')
-            mostrar_quadro(quadro)
-
             if ' ' in quadro[:]:
+                print(f'\nNível: 1-Jogador\nRodada: {rodada}')
+                mostrar_quadro(quadro)
+
                 if peca == 'X':
                     jogada_hm(peca, quadro)
                     peca = 'O'
