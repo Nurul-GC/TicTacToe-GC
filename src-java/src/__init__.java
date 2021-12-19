@@ -1,5 +1,3 @@
-import java.util.*;
-
 /************************************************
  * Direitos Autorais (c) 2019-2021. Nurul GC    *
  *                                              *
@@ -10,7 +8,7 @@ import java.util.*;
  * Allah no Comando.                            *
  ************************************************/
 
-public class tictactoe_cli {
+public class __init__ {
     public static void main(String[] args){
         char peca = 'X';
         int rodada = 0;
