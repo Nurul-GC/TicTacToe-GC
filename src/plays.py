@@ -1,6 +1,5 @@
 from sys import exit
-
-from ai import vitoria, jogada_hm, jogada_pc, jogador_indv
+from ai import vitoria, atualizar, jogada_hm, jogada_pc, jogador_indv
 
 
 def mostrar_quadro(qd):
@@ -22,10 +21,10 @@ X    **  ** **       **  ** * ** **       **  **  ** ***     **  *** **       X
 X    **  **  ******  **  **   **  ******  **  ****** *****    ******  ******  X
 XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
 """)
-    print(f'\nNivel: 2-Jogadores\nRodada: {rodada}')
     while True:
         try:
             if ' ' in quadro[:]:
+                print(f'\nNivel: 2-Jogadores\nRodada: {rodada}')
                 mostrar_quadro(quadro)
 
                 # **************************************************
@@ -55,7 +54,6 @@ XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
         except IndexError:
             rodada -= 1
             pass
-        rodada += 1
 
         # **************************************************
         if not vitoria(quadro):
@@ -63,6 +61,10 @@ XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
                 print(f'\nFim do Jogo..\nEmpate;')
                 mostrar_quadro(quadro)
                 exit(0)
+
+        # **************************************************
+        rodada += 1
+        atualizar()
 
 
 def um_jogador(rodada, peca, quadro):
@@ -102,7 +104,6 @@ XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
         except IndexError:
             rodada -= 1
             pass
-        rodada += 1
 
         # **************************************************
         if not vitoria(quadro):
@@ -110,3 +111,7 @@ XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
                 mostrar_quadro(quadro)
                 print('\nFim do Jogo..\nEmpate;')
                 exit(0)
+
+        # **************************************************
+        rodada += 1
+        atualizar()
