@@ -11,7 +11,7 @@
 # ******************************************************************************
 
 from sys import exit
-from ai import vitoria
+from ai import vitoria, atualizar
 from plays import um_jogador, dois_jogadores
 
 peca = 'X'
@@ -22,8 +22,10 @@ if __name__ == '__main__':
     while not vitoria(quadro):
         jogo = str(input('Selecione o nível: (1)Jogador ou (2)Jogadores ou (S)air..\n> '))
         if jogo == '1':
+            atualizar()
             um_jogador(rodada=rodada, peca=peca, quadro=quadro)
         elif jogo == '2':
+            atualizar()
             dois_jogadores(rodada=rodada, peca=peca, quadro=quadro)
         elif jogo.lower() == 's':
             exit(0)
