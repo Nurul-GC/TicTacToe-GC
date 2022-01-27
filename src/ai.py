@@ -1,9 +1,10 @@
+import platform
 from random import randint
 from sys import exit
 
 
 def atualizar():
-
+    limpar_tela = platform.platform()
 
 
 def vitoria(_quadro):
