@@ -1,46 +1,47 @@
 from random import randint
+from sys import exit
 
 
-def vitoria(quadro):
-    return quadro[0] == quadro[1] and quadro[0] == quadro[2] and quadro[0] != ' ' or \
-           quadro[3] == quadro[4] and quadro[3] == quadro[5] and quadro[3] != ' ' or \
-           quadro[6] == quadro[7] and quadro[6] == quadro[8] and quadro[6] != ' ' or \
-           quadro[0] == quadro[3] and quadro[0] == quadro[6] and quadro[0] != ' ' or \
-           quadro[1] == quadro[4] and quadro[1] == quadro[7] and quadro[1] != ' ' or \
-           quadro[2] == quadro[5] and quadro[2] == quadro[8] and quadro[2] != ' ' or \
-           quadro[0] == quadro[4] and quadro[0] == quadro[8] and quadro[0] != ' ' or \
-           quadro[2] == quadro[4] and quadro[2] == quadro[6] and quadro[2] != ' '
+def atualizar():
 
 
-def mostrar_quadro(qd):
+
+def vitoria(_quadro):
+    return _quadro[0] == _quadro[1] and _quadro[0] == _quadro[2] and _quadro[0] != ' ' or \
+           _quadro[3] == _quadro[4] and _quadro[3] == _quadro[5] and _quadro[3] != ' ' or \
+           _quadro[6] == _quadro[7] and _quadro[6] == _quadro[8] and _quadro[6] != ' ' or \
+           _quadro[0] == _quadro[3] and _quadro[0] == _quadro[6] and _quadro[0] != ' ' or \
+           _quadro[1] == _quadro[4] and _quadro[1] == _quadro[7] and _quadro[1] != ' ' or \
+           _quadro[2] == _quadro[5] and _quadro[2] == _quadro[8] and _quadro[2] != ' ' or \
+           _quadro[0] == _quadro[4] and _quadro[0] == _quadro[8] and _quadro[0] != ' ' or \
+           _quadro[2] == _quadro[4] and _quadro[2] == _quadro[6] and _quadro[2] != ' '
+
+
+def mostrar_quadro(_quadro):
     print(f"""
-{qd[0]}|{qd[1]}|{qd[2]}
+{_quadro[0]}|{_quadro[1]}|{_quadro[2]}
 -+-+-
-{qd[3]}|{qd[4]}|{qd[5]}
+{_quadro[3]}|{_quadro[4]}|{_quadro[5]}
 -+-+-
-{qd[6]}|{qd[7]}|{qd[8]}
+{_quadro[6]}|{_quadro[7]}|{_quadro[8]}
 """)
 
 
-def jogada_pc(peca, quadro):
+def jogada_pc(_peca, _quadro):
     pc = randint(0, 8)
-    if quadro[pc] == ' ':
-        quadro[pc] = peca
+    if _quadro[pc] == ' ':
+        _quadro[pc] = _peca
     else:
-        jogada_pc(peca=peca, quadro=quadro)
+        jogada_pc(_peca=_peca, _quadro=_quadro)
 
 
-def jogada_hm(peca, quadro):
-    jogada_h = int(input(f'\nSelecione aonde irá Jogar [{peca}]:\n[0-8]> '))
-    if quadro[jogada_h] == ' ':
-        quadro[jogada_h] = peca
-    else:
-        print('Selecione outra posição de jogo;')
+def jogada_hm(_peca, _quadro):
+    jogada_h = int(input(f'\nSelecione aonde irá Jogar [{_peca}]:\n[0-8]> '))
+    if _quadro[jogada_h] == ' ':
+        _quadro[jogada_h] = _peca
 
 
-def jogador_indv(peca, quadro):
-    jogada = int(input(f'\nSelecione aonde irá Jogar [{peca}]:\n[0-8]> '))
-    if quadro[jogada] == ' ':
-        quadro[jogada] = peca
-    else:
-        print('Selecione outra posição de jogo;')
+def jogador_indv(_peca, _quadro):
+    jogada = int(input(f'\nSelecione aonde irá Jogar [{_peca}]:\n[0-8]> '))
+    if _quadro[jogada] == ' ':
+        _quadro[jogada] = _peca
