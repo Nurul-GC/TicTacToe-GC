@@ -1,16 +1,6 @@
-# Bem-Vindo a minha réplica do jogo TicTacToe
+# TicTacToe-GC
 
-    fiz questão de personaliza-la e criar um 
-    algoritmo só meu :)
+    Command Line Interface Game
 
-    graças a imensa inteligência que me foi 
-    oferecida por DEUS pude escrever dois 
-    algoritmos em duas linguagens diferentes
-    e muito populares [python && java]
-
----
-
-**faça bom proveito!**
-
-&copy; 2019-2021 [Nurul-GC](mailto:nuruldecarvalho@gmail.com) \
+&copy; 2019-2022 Nurul-GC \
 &trade;[ArtesGC](https://artesgc.home.blog)
