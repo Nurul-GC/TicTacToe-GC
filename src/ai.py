@@ -1,10 +1,15 @@
+import os
 import platform
 from random import randint
 from sys import exit
 
 
 def atualizar():
-    limpar_tela = platform.platform()
+    sistema = platform.platform()
+    if "Linux" in sistema:
+        return os.system('clear')
+    elif "Windows" in sistema:
+        return os.system('cls')
 
 
 def vitoria(_quadro):
