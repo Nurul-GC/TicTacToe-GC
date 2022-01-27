@@ -14,12 +14,21 @@ def mostrar_quadro(qd):
 
 
 def dois_jogadores(quadro, peca, rodada):
+    print("""
+XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
+X  ******          ******               ******                *****   *****   X
+X    **  **  ******  **   *****   ******  **  ****** *****   **      **       X
+X    **  ** **       **  ** * ** **       **  **  ** ***     **  *** **       X
+X    **  **  ******  **  **   **  ******  **  ****** *****    ******  ******  X
+XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
+""")
+    print(f'\nNivel: 2-Jogadores\nRodada: {rodada}')
     while True:
         try:
             if ' ' in quadro[:]:
-                print(f'\nNivel: 2-Jogadores\nRodada: {rodada}')
                 mostrar_quadro(quadro)
 
+                # **************************************************
                 if peca == 'X':
                     jogador_indv(peca, quadro)
                     peca = 'O'
@@ -27,6 +36,8 @@ def dois_jogadores(quadro, peca, rodada):
                         mostrar_quadro(quadro)
                         print(f'\nFim do Jogo..\nVitória para Jogador [{peca}];')
                         exit(0)
+
+                # **************************************************
                 elif peca == 'O':
                     jogador_indv(peca, quadro)
                     peca = 'X'
@@ -34,13 +45,19 @@ def dois_jogadores(quadro, peca, rodada):
                         mostrar_quadro(quadro)
                         print(f'\nFim do Jogo..\nVitória para Jogador [{peca}];')
                         exit(0)
+
+            # **************************************************
             else:
                 rodada -= 1
                 print(f'\nSelecione outra Posição de Jogo para [{peca}]!')
+
+        # **************************************************
         except IndexError:
             rodada -= 1
-            print('\nPosição Inválida, Tente Novamente;')
+            pass
         rodada += 1
+
+        # **************************************************
         if not vitoria(quadro):
             if ' ' not in quadro[:]:
                 print(f'\nFim do Jogo..\nEmpate;')
@@ -49,12 +66,21 @@ def dois_jogadores(quadro, peca, rodada):
 
 
 def um_jogador(rodada, peca, quadro):
+    print("""
+XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
+X  ******          ******               ******                *****   *****   X
+X    **  **  ******  **   *****   ******  **  ****** *****   **      **       X
+X    **  ** **       **  ** * ** **       **  **  ** ***     **  *** **       X
+X    **  **  ******  **  **   **  ******  **  ****** *****    ******  ******  X
+XOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOXOX
+""")
     while True:
         try:
             if ' ' in quadro[:]:
                 print(f'\nNível: 1-Jogador\nRodada: {rodada}')
                 mostrar_quadro(quadro)
 
+                # **************************************************
                 if peca == 'X':
                     jogada_hm(peca, quadro)
                     peca = 'O'
@@ -62,6 +88,8 @@ def um_jogador(rodada, peca, quadro):
                         mostrar_quadro(quadro)
                         print('Fim do jogo..\nVocê Ganhou!')
                         exit(0)
+
+                # **************************************************
                 elif peca == 'O':
                     jogada_pc(peca, quadro)
                     peca = 'X'
@@ -69,9 +97,14 @@ def um_jogador(rodada, peca, quadro):
                         mostrar_quadro(quadro)
                         print('Fim do jogo..\nComputador Ganhou!')
                         exit(0)
+
+        # **************************************************
         except IndexError:
             rodada -= 1
+            pass
         rodada += 1
+
+        # **************************************************
         if not vitoria(quadro):
             if ' ' not in quadro[:]:
                 mostrar_quadro(quadro)
